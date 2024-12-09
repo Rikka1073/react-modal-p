@@ -3,8 +3,8 @@ import "./App.css";
 import NormalModal from "./components/NormalModal";
 
 function App() {
-  // const [modalIsOpen, setisOpen] = useState(false);
   const [openModalId, setOpenModalId] = useState(null);
+
   return (
     <>
       <div className="bg-teal-500 h-screen p-20 relative">
