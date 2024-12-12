@@ -1,14 +1,21 @@
 import Modal from "react-modal";
+const NormalModal = ({ modalisOpen, setModalIsOpen, setModalId, children }) => {
+  const onclickClose = () => {
+    setModalIsOpen(false);
+  };
 
-const NormalModal = ({ setOpenModalId, openModalId, children, modalId }) => {
-  const isOpen = openModalId === modalId;
+  const onClickOpen = () => {
+    setModalIsOpen(true);
+    setModalId(1);
+  };
+
   return (
     <div>
-      <Modal isOpen={isOpen}>
-        <button onClick={() => setOpenModalId(null)}>モーダルを閉じる</button>
+      <Modal isOpen={modalisOpen}>
+        <button onClick={onclickClose}>モーダルを閉じる</button>
         <div>{children}</div>
       </Modal>
-      <button onClick={() => setOpenModalId(modalId)}>モーダルを開く</button>
+      <button onClick={onClickOpen}>モーダルを開く</button>
     </div>
   );
 };
